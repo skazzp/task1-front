@@ -25,6 +25,7 @@ export const Icon = styled.svg`
   width: 16px;
   height: 16px;
   fill: #696969;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     fill: black;
