@@ -8,6 +8,7 @@ export const Container = styled.div`
   width: 100%;
   padding-top: 180px;
   padding-left: 10%;
+  padding-right: 10%;
   padding-bottom: 174px;
   background-image: url(${Cartoon1}), url(${Cartoon2}), url(${Map}), url(${Clouds});
   background-repeat: no-repeat;
@@ -93,4 +94,5 @@ export const Button = styled.button`
   background-color: #fad34f;
   border-radius: 500px;
   border: none;
+  cursor: pointer;
 `;

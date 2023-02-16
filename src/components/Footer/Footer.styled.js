@@ -24,4 +24,13 @@ export const List = styled.ul`
 export const Icon = styled.svg`
   width: 16px;
   height: 16px;
+  fill: #696969;
+
+  &:hover {
+    fill: black;
+  }
+`;
+
+export const Link = styled.a`
+  cursor: pointer;
 `;

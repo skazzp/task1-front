@@ -1,29 +1,37 @@
 import icons from '../../assets/images/icons.svg';
-import { Container, Icon, List } from './Footer.styled';
+import { Container, Icon, Link, List } from './Footer.styled';
 
 const Footer = () => {
   return (
     <Container>
       <List>
         <li>
-          <Icon>
-            <use href={icons + `#icon-linkedin`}></use>
-          </Icon>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <Icon>
+              <use href={icons + `#icon-linkedin`}></use>
+            </Icon>
+          </a>
         </li>
         <li>
-          <Icon>
-            <use href={icons + `#icon-twitter`}></use>
-          </Icon>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <Icon>
+              <use href={icons + `#icon-twitter`}></use>
+            </Icon>
+          </a>
         </li>
         <li>
-          <Icon>
-            <use href={icons + `#icon-facebook`}></use>
-          </Icon>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <Icon>
+              <use href={icons + `#icon-facebook`}></use>
+            </Icon>
+          </a>
         </li>
         <li>
-          <Icon>
-            <use href={icons + `#icon-pinterest`}></use>
-          </Icon>
+          <Link href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">
+            <Icon>
+              <use href={icons + `#icon-pinterest`}></use>
+            </Icon>
+          </Link>
         </li>
       </List>
     </Container>
