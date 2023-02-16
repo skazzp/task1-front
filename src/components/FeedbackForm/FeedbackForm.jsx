@@ -1,3 +1,7 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { createFeedback } from '../../redux/feedback/feedbackOperations';
+import { selectEmail, selectMessage, selectName } from '../../redux/feedback/feedbackSelectors';
+import { changeFormValues } from '../../redux/feedback/feedbackSlice';
 import {
   Button,
   Container,
@@ -10,8 +14,19 @@ import {
 } from './FeedbackForm.styled';
 
 const FeedbackForm = () => {
-  const handleChange = () => {};
-  const handleFormSubmit = () => {};
+  const dispatch = useDispatch();
+  const name = useSelector(selectName);
+  const email = useSelector(selectEmail);
+  const message = useSelector(selectMessage);
+  const handleChange = e => {
+    // console.log(e.target.name, e.target.value);
+    dispatch(changeFormValues({ name: e.target.name, value: e.target.value }));
+  };
+  const handleFormSubmit = e => {
+    e.preventDefault();
+    dispatch(createFeedback({ name, email, message }));
+  };
+
   return (
     <Container>
       <FormContainer>
@@ -21,7 +36,7 @@ const FeedbackForm = () => {
           <Input
             type="text"
             name="name"
-            //   value={}
+            value={name}
             placeholder="Your name*"
             onChange={handleChange}
             required
@@ -31,7 +46,7 @@ const FeedbackForm = () => {
             <Input
               type="email"
               name="email"
-              //   value={}
+              value={email}
               placeholder="Your e-mail*"
               onChange={handleChange}
               required
@@ -43,6 +58,7 @@ const FeedbackForm = () => {
               id="message"
               cols="30"
               rows="5"
+              value={message}
               placeholder="Your message*"
               onChange={handleChange}
               required
